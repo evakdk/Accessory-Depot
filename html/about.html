@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/about.css" />
+    <title>Accessory Depot</title>
+  </head>
+  <!-- Script for chart.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+  <body>
+    <div class="wrapper">
+      <section class="header">
+        <nav>
+          <div class="burgerIcon">
+            <div class="bar1 bar"></div>
+            <div class="bar2 bar"></div>
+            <div class="bar3 bar"></div>
+          </div>
+          <div class="burgerMenu hide">
+            <ul class="menuList">
+              <li class="menuItems"><a href="/">Home</a></li>
+              <li class="menuItems">
+                <a href="./accessories.html">Accessories</a>
+              </li>
+              <li class="menuItems">
+                <a href="./repairs.html">Repairs</a>
+              </li>
+              <li class="menuItems">
+                <a href="./contact.html">Contact Us</a>
+              </li>
+              <li class="menuItems">
+                <a href="./about.html">About Us</a>
+              </li>
+            </ul>
+          </div>
+          <div class="logo">
+            <img src="../img/Logo_Acceso.png" alt="LOGO" />
+          </div>
+          <ul class="navList">
+            <li class="navItems"><a href="/">Home</a></li>
+            <li class="navItems">
+              <a href="./accessories.html">Accessories</a>
+            </li>
+            <li class="navItems"><a href="./repairs.html">Repairs</a></li>
+            <li class="navItems">
+              <a href="./contact.html">Contact Us</a>
+            </li>
+            <li class="navItems"><a href="./about.html">About Us</a></li>
+          </ul>
+          <div class="search">
+            <input type="text" placeholder="Search Here" />
+            <button>
+              <img src="../img/search.png" alt="" class="searchIcon" />
+            </button>
+          </div>
+        </nav>
+      </section>
+
+      <section class="about-us">
+        <h1>About Accessory Depot</h1>
+        <p>
+          Welcome to Accessory Depot, your go-to destination for all your tech
+          accessory needs. Established in 2002,a family owned small business we
+          pride ourselves on offering a wide range of high-quality accessories
+          for your mobile devices, computers, and wearables.
+        </p>
+
+        <h2>Our Mission</h2>
+        <p>
+          Our mission is to provide the latest and greatest in tech accessories
+          at affordable prices while delivering exceptional customer service. We
+          are committed to staying ahead of the trends and ensuring that our
+          customers have access to the most innovative products on the market.
+        </p>
+        <div class="charts">
+          <canvas id="myChart" style="width: 25%; max-width: 500px"></canvas>
+          <canvas id="pieChart" style="width: 25%; max-width: 500px"></canvas>
+          <canvas
+            id="doughnutChart"
+            style="width: 25%; max-width: 500px"
+          ></canvas>
+        </div>
+
+        <h2>Meet the Team</h2>
+        <div class="team">
+          <div class="team-member">
+            <img src="../img/person1.jpg" alt="CEO" />
+            <h3>Ron Dahl</h3>
+            <p>Founder & CEO</p>
+          </div>
+          <div class="team-member">
+            <img src="../img/person2.jpg" alt="CTO" />
+            <h3>John Dahl</h3>
+            <p>Chief Technology Officer</p>
+          </div>
+          <div class="team-member">
+            <img src="../img/person3.jpg" alt="Marketing" />
+            <h3>Emily Lee Dahl</h3>
+            <p>Marketing Director</p>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- Script for making charts -->
+    <script>
+      // For bar chart
+      const xValues = [
+        "Massachusetts",
+        "Washington",
+        "Texas",
+        "Nevada",
+        "California",
+        "New York",
+        "Florida",
+        "Wisconsin",
+        "Ohio",
+        "Arizona",
+        "Maine",
+        "Iowa",
+      ];
+      const yValues = [5, 14, 12, 2, 10, 6, 11, 8, 4, 9, 7, 1];
+      const barColors = [
+        "red",
+        "green",
+        "blue",
+        "orange",
+        "brown",
+        "gray",
+        "black",
+        "pink",
+        "aqua",
+        "purple",
+        "#F4EFE6",
+        "#162A2C",
+      ];
+
+      new Chart("myChart", {
+        type: "bar",
+        data: {
+          labels: xValues,
+          datasets: [
+            {
+              backgroundColor: barColors,
+              data: yValues,
+            },
+          ],
+        },
+        options: {
+          legend: { display: false },
+          title: {
+            display: true,
+            text: "Our outlets as of 2024",
+          },
+        },
+      });
+
+      // For Pie-chart
+      const piexValues = [
+        "Massachusetts",
+        "Washington",
+        "Texas",
+        "Nevada",
+        "California",
+      ];
+      const pieyValues = [5, 14, 12, 2, 10];
+      const pieColors = ["red", "green", "blue", "orange", "brown"];
+      new Chart("pieChart", {
+        type: "pie",
+        data: {
+          labels: piexValues,
+          datasets: [
+            {
+              backgroundColor: pieColors,
+              data: pieyValues,
+            },
+          ],
+        },
+        options: {
+          title: {
+            display: true,
+            text: "4+ rated outlets",
+          },
+        },
+      });
+
+      // For dough-nut-chart
+      const DNxValues = ["New York", "Florida", "Wisconsin", "Ohio", "Arizona"];
+      const DNyValues = [6, 11, 8, 4, 9];
+      const DNColors = ["orange", "brown", "gray", "black", "pink"];
+      new Chart("doughnutChart", {
+        type: "doughnut",
+        data: {
+          labels: DNxValues,
+          datasets: [
+            {
+              backgroundColor: DNColors,
+              data: DNyValues,
+            },
+          ],
+        },
+        options: {
+          title: {
+            display: true,
+            text: "3+ rated outlets",
+          },
+        },
+      });
+    </script>
+
+    <!-- Script for burger Icon -->
+    <script src="../js/script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,87 @@
+:root {
+    --color-primary: #FEFCF6;
+    --color-secondary: #F4EFE6;
+    --dark-primary: #00012F;
+    --dark-secondary: #162A2C;
+    --btn-primary: #02B875;
+    --btn-secondary: #57AD68;
+}
+
+.container {
+    height: auto;
+    background-color: whitesmoke;
+}
+
+h2 {
+    margin: 1.2rem;
+}
+
+.container .box {
+    height: 42vh;
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+}
+
+.item {
+    margin: 0 10px;
+}
+
+.item img {
+    height: 30vh;
+    width: 18vw;
+    border-radius: 5px;
+}
+
+.item img:hover {
+    opacity: 0.7;
+    cursor: pointer;
+}
+
+.container .box .item .img {
+    height: 30vh;
+    width: 20vw;
+}
+
+.flex-all-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.btn {
+    background-color: var(--btn-primary);
+    border: none;
+    border-radius: 5px;
+    color: var(--color-primary);
+    padding: 0 5px;
+}
+
+.btn:hover {
+    background-color: var(--btn-secondary);
+}
+
+
+
+
+
+/* Responsive design */
+
+@media screen and (max-width: 1080px) {
+    .container .box {}
+}
+
+
+@media screen and (max-width: 450px) {
+    .container .box {
+        height: max-content;
+        display: flex;
+        flex-direction: column;
+        overflow-x: hidden;
+    }
+
+    .flex-all-center {
+        align-items: flex-start;
+    }
+}

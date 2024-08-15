@@ -1,0 +1,117 @@
+:root {
+    --color-primary: #FEFCF6;
+    --color-secondary: #F4EFE6;
+    --dark-primary: #00012F;
+    --dark-secondary: #162A2C;
+    --btn-primary: #30c853;
+    --btn-secondary: #57AD68;
+}
+
+.contactUs {
+    display: flex;
+    padding: 0 6rem;
+}
+
+.form {
+    height: 40vh;
+    width: 50%;
+    margin-top: 8rem;
+    display: flex;
+    justify-content: center;
+}
+
+label {
+    font-size: 1.2rem;
+    margin-top: 1rem;
+}
+
+.formInput {
+    border: none;
+    border-bottom: var(--dark-primary) 2px solid;
+}
+
+.formInput:focus {
+    outline: none;
+}
+
+label,
+.formInput {
+    display: block;
+}
+
+.submit {
+    color: white;
+    font-size: 1.2rem;
+    height: 2rem;
+    width: 6rem;
+    border: none;
+    border-radius: 7px;
+    margin-top: 1rem;
+    background-color: var(--btn-secondary);
+}
+
+.submit:hover {
+    background-color: var(--btn-primary);
+}
+
+
+.contactInfo {
+    height: 100vh;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    margin-top: 2rem;
+    padding: 0 4rem;
+}
+
+.contactDetails {
+    margin-bottom: 2.5rem;
+}
+
+.contactInfoList,
+.socialHandles {
+    list-style: none;
+}
+
+.contactInfoItem {
+    margin-bottom: 0.2rem;
+}
+
+.socialHandles {
+    display: flex;
+}
+
+.socialHandles img {
+    height: 2rem;
+    width: auto;
+    margin-right: 1rem;
+}
+
+/* Responsive design */
+
+@media screen and (max-width: 1080px) {
+    .contactUs {
+        flex-direction: column;
+    }
+
+    .form {
+        margin-top: 2rem;
+        margin-bottom: 15rem;
+    }
+
+    .contactInfo {
+        padding: 0;
+    }
+}
+
+
+@media screen and (max-width: 450px) {
+    .contactUs {
+        scale: 0.7;
+    }
+
+    .form {
+        margin-top: 0rem;
+    }
+}

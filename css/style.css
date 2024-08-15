@@ -1,0 +1,271 @@
+@import url('https://fonts.googleapis.com/css2?family=Anek+Devanagari:wght@100..800&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+:root {
+    --color-primary: #FEFCF6;
+    --color-secondary: #F4EFE6;
+    --dark-primary: #00012F;
+    --dark-secondary: #162A2C;
+
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.wrapper {
+    font-family: "Anek Devanagari", sans-serif;
+    color: var(--dark-primary);
+}
+
+.header {
+    font-size: 1.4rem;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 40px;
+    height: 3rem;
+}
+
+/* Burger Icon */
+
+.burgerIcon {
+    display: none;
+    margin: 0 0.6rem;
+    cursor: pointer;
+}
+
+.bar {
+    height: 4px;
+    width: 28px;
+    margin: 3px 5px;
+    background-color: var(--dark-primary);
+    border-radius: 7px;
+}
+
+.change .bar1 {
+    transform: translate(0, 6.8px) rotate(45deg);
+}
+
+.change .bar2 {
+    opacity: 0;
+}
+
+.change .bar3 {
+    transform: translate(0, -6.8px) rotate(-45deg);
+}
+
+.burgerMenu {
+    display: block;
+    /* display: none; */
+    position: fixed;
+    /* background: rgba(0, 0, 0, 0.2); */
+    /* background-color: rgb(246, 246, 246); */
+    top: 3.5rem;
+    height: 100vh;
+    border-top-right-radius: 2px;
+    border-bottom-right-radius: 5px;
+    width: 10rem;
+    padding: 14px;
+}
+
+.menuList {
+    list-style: none;
+    z-index: 4;
+}
+
+.menuItems {
+    margin-bottom: 2rem;
+}
+
+.menuItems a {
+    text-decoration: none;
+    color: var(--dark-secondary);
+    transition: 0.25s ease;
+    margin: 0;
+    padding: 0;
+}
+
+.menuItems a:hover {
+    color: var(--dark-primary);
+    box-shadow: 0 2px 0 0 currentcolor;
+    cursor: pointer;
+}
+
+.hide {
+    display: none;
+}
+
+.show {
+    display: block;
+}
+
+/* Logo and Navbar Items */
+
+.logo img {
+    height: 6rem;
+    width: auto;
+}
+
+.navList {
+    list-style: none;
+    display: flex;
+}
+
+.navItems {
+    margin: 0 2.2rem;
+}
+
+.navItems a {
+    text-decoration: none;
+    color: var(--dark-secondary);
+    transition: 0.25s ease;
+    opacity: 0.8;
+}
+
+.navItems a:hover {
+    color: var(--dark-primary);
+    box-shadow: 0 2px 0 0 currentcolor;
+    cursor: pointer;
+    opacity: 1;
+}
+
+.search {
+    height: max-content;
+}
+
+.search input {
+    font-size: 1rem;
+    padding: 2px;
+    height: 1.6rem;
+    border: none;
+    border-bottom: var(--dark-primary) 2px solid;
+}
+
+.search input:focus {
+    outline: none;
+}
+
+.search button {
+    height: 1.6rem;
+    width: 1.8rem;
+}
+
+.searchIcon {
+    height: 1rem;
+    width: auto;
+}
+
+.searchIcon:hover {
+    scale: 1.2;
+    cursor: pointer;
+    /* background-color: #fff; */
+}
+
+/* Main section */
+.main {
+    height: calc(100vh - 3rem);
+    width: 100vw;
+    display: flex;
+    align-items: center;
+}
+
+.content {
+    margin-top: 4rem;
+    margin-right: 10rem;
+    padding: 10px 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 2;
+}
+
+.content span {
+    padding: 0.2rem 1rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--dark-secondary);
+    border-radius: 20px;
+    margin: 1rem 0;
+}
+
+
+@keyframes typing {
+    0% {
+        width: 0;
+    }
+
+    50% {
+        width: 100%;
+    }
+
+    100% {
+        width: 100%;
+    }
+}
+
+@keyframes blink {
+    50% {
+        border-color: transparent;
+    }
+}
+
+.typed-out {
+    overflow: hidden;
+    color: var(--dark-secondary);
+    font-weight: bold;
+    font-size: 2.7rem;
+    opacity: 0.8;
+    border-right: .15em solid var(--dark-primary);
+    white-space: nowrap;
+    margin: 0 auto;
+    letter-spacing: .15em;
+    animation: typing 3.5s steps(20, end) infinite alternate, blink 1s step-end infinite;
+}
+
+.mainImage img {
+    scale: 0.8;
+}
+
+
+/* Responsive design */
+
+@media screen and (max-width: 1080px) {
+    nav {
+        padding: 10px 0;
+    }
+
+    .navList {
+        display: none;
+    }
+
+    .burgerIcon {
+        display: inline-block;
+        margin-left: 1rem;
+    }
+
+
+    .mainImage img {
+        display: none;
+    }
+
+    .content {
+        scale: 0.8;
+    }
+}
+
+
+@media screen and (max-width: 450px) {
+    .search {
+        visibility: hidden;
+    }
+
+    .content {
+        scale: 0.5;
+        margin: 0;
+        padding: 0;
+    }
+}
